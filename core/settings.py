@@ -144,7 +144,10 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 GRAPHQL_JWT = {
-    "JWT_ALLOW_ANY_CLASSES": ["graphql_auth.mutations.Register"],
+    "JWT_ALLOW_ANY_CLASSES": [
+        "graphql_auth.mutations.Register",
+        "graphql_auth.mutations.VerifyAccount",
+    ],
     "JWT_VERIFY_EXPIRATION": True,
     "JWT_LONG_RUNNING_REFRESH": True,
 }
