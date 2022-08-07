@@ -130,18 +130,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "user.ExtendUser"
 
-
+# GRAPHQL SETTINGS
 GRAPHENE = {
     "SCHEMA": "user.schema.schema",
     "MIDDLEWARE": ["graphql_jwt.middleware.JSONWebTokenMiddleware"],
 }
-
-AUTHENTICATION_BACKENDS = [
-    "graphql_auth.backends.GraphQLAuthBackend",
-    "django.contrib.auth.backends.ModelBackend",
-]
-
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 GRAPHQL_JWT = {
     "JWT_ALLOW_ANY_CLASSES": [
@@ -152,3 +145,16 @@ GRAPHQL_JWT = {
     "JWT_VERIFY_EXPIRATION": True,
     "JWT_LONG_RUNNING_REFRESH": True,
 }
+
+# AUTH SETTINGS
+
+AUTHENTICATION_BACKENDS = [
+    "graphql_auth.backends.GraphQLAuthBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
+
+GRAPHQL_AUTH = {
+    "LOGIN_ALLOWED_FIELDS": ["email"],
+}
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
