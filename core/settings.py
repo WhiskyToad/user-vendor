@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "graphql_auth",
     "django_filters",
     "user",
+    "vendor",
 ]
 
 MIDDLEWARE = [
