@@ -133,7 +133,6 @@ AUTH_USER_MODEL = "user.ExtendUser"
 
 # GRAPHQL SETTINGS
 GRAPHENE = {
-    "SCHEMA": "user.schema.schema",
     "MIDDLEWARE": ["graphql_jwt.middleware.JSONWebTokenMiddleware"],
 }
 
